@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA25AFBA280D92F400093BBB /* ChecklistGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA25AFB9280D92F400093BBB /* ChecklistGroup.swift */; };
 		FA299B7B28099D3900F6330C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA299B7A28099D3900F6330C /* AppDelegate.swift */; };
 		FA299B7D28099D3900F6330C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA299B7C28099D3900F6330C /* SceneDelegate.swift */; };
 		FA299B7F28099D3900F6330C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA299B7E28099D3900F6330C /* MainViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA25AFB9280D92F400093BBB /* ChecklistGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistGroup.swift; sourceTree = "<group>"; };
 		FA299B7728099D3900F6330C /* Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA299B7A28099D3900F6330C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA299B7C28099D3900F6330C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,9 +39,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA25AFB7280D923000093BBB /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		FA25AFB8280D925500093BBB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA25AFB9280D92F400093BBB /* ChecklistGroup.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FA299B6E28099D3900F6330C = {
 			isa = PBXGroup;
 			children = (
+				FA25AFB7280D923000093BBB /* New Group */,
 				FA299B7928099D3900F6330C /* Checklist */,
 				FA299B7828099D3900F6330C /* Products */,
 			);
@@ -56,6 +74,7 @@
 		FA299B7928099D3900F6330C /* Checklist */ = {
 			isa = PBXGroup;
 			children = (
+				FA25AFB8280D925500093BBB /* Models */,
 				FA299B7A28099D3900F6330C /* AppDelegate.swift */,
 				FA299B7C28099D3900F6330C /* SceneDelegate.swift */,
 				FA299B7E28099D3900F6330C /* MainViewController.swift */,
@@ -139,6 +158,7 @@
 			files = (
 				FA299B7F28099D3900F6330C /* MainViewController.swift in Sources */,
 				FA299B7B28099D3900F6330C /* AppDelegate.swift in Sources */,
+				FA25AFBA280D92F400093BBB /* ChecklistGroup.swift in Sources */,
 				FA299B7D28099D3900F6330C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
