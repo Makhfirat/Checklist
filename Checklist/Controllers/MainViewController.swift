@@ -9,6 +9,7 @@ import UIKit
 
 class MainViewController: UITableViewController  {
     
+    
     let groups: [ChecklistGroup] = [
         ChecklistGroup(title: "Birthdays", imageName: "birthdaypic"),
         ChecklistGroup(title: "Groceries", imageName: "groceriespic"),
@@ -26,10 +27,13 @@ class MainViewController: UITableViewController  {
         return groups.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let group: ChecklistGroup  = groups[indexPath.row]
-         let cell = UITableViewCell()
-        cell.textLabel?.text = group.title
-        return cell
+       
+        let group = groups[indexPath.row]
+        
+       let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
+        
+        cell.titleLabel.text = group.title
+        return cell 
     }
 }
 
