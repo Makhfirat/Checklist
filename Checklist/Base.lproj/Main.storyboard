@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pLg-y8-uzI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qeU-2M-TiJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Group Details Table View Controller-->
+        <!--Checklist-->
         <scene sceneID="ljw-ML-fw2">
             <objects>
                 <tableViewController id="9m2-gv-7qx" customClass="GroupDetailsTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,12 +54,13 @@
                             <outlet property="delegate" destination="9m2-gv-7qx" id="JWs-6A-Lt6"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Checklist" largeTitleDisplayMode="always" id="QEm-fF-asc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Szd-ps-ttj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1555.072463768116" y="12.723214285714285"/>
+            <point key="canvasLocation" x="255" y="72"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Checklists-->
         <scene sceneID="xwc-il-dy9">
             <objects>
                 <tableViewController id="Ee1-Pn-gMy" customClass="MainViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,8 +85,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73w-p4-WMD">
-                                            <rect key="frame" x="62" y="19" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthdays" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73w-p4-WMD">
+                                            <rect key="frame" x="62" y="19" width="72.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -113,10 +114,11 @@
                             <outlet property="delegate" destination="Ee1-Pn-gMy" id="25R-UQ-7Vb"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Checklists" largeTitleDisplayMode="always" id="XEs-p5-P2F"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scd-pf-LGR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-530.43478260869574" y="60.9375"/>
+            <point key="canvasLocation" x="-675" y="72"/>
         </scene>
         <!--Add Item Table View Controller-->
         <scene sceneID="kMy-hW-Kj1">
@@ -187,14 +189,14 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DateCell" id="JkO-Cu-HmR" customClass="DateTableViewCell" customModule="Checklist" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="140" width="414" height="59"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="59.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JkO-Cu-HmR" id="pI4-vq-FPR">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ok8-4L-jKZ">
-                                            <rect key="frame" x="36" y="19" width="69" height="21"/>
+                                            <rect key="frame" x="36" y="19" width="69" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -225,7 +227,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TwR-u5-CUM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="wRu-YH-jcc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="350.72463768115944" y="60.9375"/>
+            <point key="canvasLocation" x="1260.8695652173915" y="60.9375"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="BVC-d5-qMb">
+            <objects>
+                <navigationController title="Title" automaticallyAdjustsScrollViewInsets="NO" id="qeU-2M-TiJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="N5n-b5-T2N">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ee1-Pn-gMy" kind="relationship" relationship="rootViewController" id="9dp-W1-yMc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2UB-ro-pmv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1555.072463768116" y="12.723214285714285"/>
         </scene>
     </scenes>
     <resources>
