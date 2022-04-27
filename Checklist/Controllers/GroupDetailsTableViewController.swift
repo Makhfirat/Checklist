@@ -14,17 +14,7 @@ import UIKit
 
 class GroupDetailsTableViewController: UITableViewController {
 
-    var item: [ChecklistItem] = [
-        ChecklistItem(isChecked: true, name: "walk the dog"),
-        ChecklistItem(isChecked: false, name: "brush the teeth"),
-        ChecklistItem(isChecked: true, name: "IOS development"),
-        ChecklistItem(isChecked: false, name: "Soccer practice"),
-        ChecklistItem(isChecked: true, name: "Eat ice-cream"),
-        ChecklistItem(isChecked: true, name: "Dance in the rain")
-    
-    
-    
-    ]
+    var items: [ChecklistItem] = []
         
         
     override func viewDidLoad() {
@@ -42,15 +32,15 @@ class GroupDetailsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return item.count
+        return items.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let items = item[indexPath.row]
+        let item = items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath) as! ItemsTableViewCell
-        cell.noteLabel.text = items.name
-        cell.check.isHidden = items.isChecked
+        cell.noteLabel.text = item.name
+        cell.check.isHidden = item.isChecked
 
 
         return cell
