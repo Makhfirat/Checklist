@@ -39,6 +39,7 @@ class MainViewController: UITableViewController  {
         
         let group = groups[indexPath.row]
         
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
         cell.iconView.image = UIImage(named: group.imageName)
         cell.titleLabel.text = group.title
@@ -49,6 +50,7 @@ class MainViewController: UITableViewController  {
         if segue.identifier == "MainToGroupDetails" {
             if let vc = segue.destination as? GroupDetailsTableViewController  {
                 if let indexPath = tableView.indexPathForSelectedRow {
+                    vc.title = groups[indexPath.row].title
                     vc.items = groups[indexPath.row].items
                     
                     

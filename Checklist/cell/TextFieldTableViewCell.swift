@@ -8,9 +8,9 @@
 import UIKit
 
 class TextFieldTableViewCell: UITableViewCell {
-
-    @IBAction func TextField(_ sender: Any) {
-    }
+    
+    @IBOutlet weak var addTextField: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

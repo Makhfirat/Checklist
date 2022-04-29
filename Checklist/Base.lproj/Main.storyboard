@@ -55,7 +55,13 @@
                             <outlet property="delegate" destination="9m2-gv-7qx" id="JWs-6A-Lt6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Birthdays" largeTitleDisplayMode="never" id="QEm-fF-asc"/>
+                    <navigationItem key="navigationItem" title="Birthdays" largeTitleDisplayMode="never" id="QEm-fF-asc">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="eMM-IY-k3t">
+                            <connections>
+                                <segue destination="pLg-y8-uzI" kind="show" id="t5F-Vl-etG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Szd-ps-ttj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -145,10 +151,6 @@
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <action selector="TextField:" destination="wRu-YH-jcc" eventType="editingDidEnd" id="3jn-i2-U7V"/>
-                                                <action selector="TextField:" destination="HYi-fT-oPf" eventType="editingDidEnd" id="NxL-oD-nJ8"/>
-                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
@@ -158,6 +160,9 @@
                                         <constraint firstAttribute="bottom" secondItem="8P6-2s-ERw" secondAttribute="bottom" constant="8" id="nWt-po-bKe"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addTextField" destination="8P6-2s-ERw" id="LLe-tS-web"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwitchCell" id="VU8-sf-D9n" customClass="SwitchTableViewCell" customModule="Checklist" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92.5" width="414" height="47.5"/>
@@ -251,9 +256,13 @@
             <point key="canvasLocation" x="-1555.072463768116" y="12.723214285714285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="AcM-0L-7vm"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Birthdays" width="36" height="36"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
