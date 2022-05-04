@@ -10,18 +10,18 @@ import UIKit
 class MainViewController: UITableViewController  {
     
     
-    let groups: [ChecklistGroup] = [
+    var groups: [ChecklistGroup] = [
         ChecklistGroup(title: "Birthdays", imageName: "Birthdays", items: [
-            ChecklistItem(isChecked: true, name: "Party")
+            ChecklistItem(isChecked: false, name: "Party", remindMe: true, dueDate: Date())
         ]),
         ChecklistGroup(title: "Groceries", imageName: "Groceries", items: [
-            ChecklistItem(isChecked: true, name: "Dog")
+            ChecklistItem(isChecked: true, name: "Dog", remindMe: true, dueDate: Date())
         ]),
         ChecklistGroup(title: "To Do", imageName: "Inbox", items: [
-            ChecklistItem(isChecked: false, name: "Ballon")
+            ChecklistItem(isChecked: false, name: "Ballon", remindMe: false, dueDate: nil)
         ]),
         ChecklistGroup(title: "Work", imageName: "Folder", items: [
-            ChecklistItem(isChecked: true, name: "Cake")
+            ChecklistItem(isChecked: true, name: "Cake", remindMe: true, dueDate: Date())
         ])
     ]
     

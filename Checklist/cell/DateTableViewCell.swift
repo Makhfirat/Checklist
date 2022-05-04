@@ -9,8 +9,8 @@ import UIKit
 
 class DateTableViewCell: UITableViewCell {
 
-    @IBAction func Date(_ sender: Any) {
-    }
+    @IBOutlet weak var Date: UIDatePicker!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
