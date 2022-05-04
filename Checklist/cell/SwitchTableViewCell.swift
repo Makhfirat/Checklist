@@ -8,6 +8,10 @@
 import UIKit
 
 class SwitchTableViewCell: UITableViewCell {
+    
+    var onSwitchChanged: (() -> Void)?
+    
+    
     @IBOutlet weak var `switch`: UISwitch!
     
     
@@ -24,5 +28,6 @@ class SwitchTableViewCell: UITableViewCell {
 
     @IBAction func switchDidChange(_ sender: UISwitch) {
         print("значение свитча: \(sender.isOn)")
+        onSwitchChanged?()
     }
 }

@@ -48,6 +48,12 @@ class AddItemTableViewController: UITableViewController {
         } else if indexPath.section ==  1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchCell", for: indexPath) as! SwitchTableViewCell
             cell.switch.setOn(item?.remindMe ?? false, animated: true)
+            cell.onSwitchChanged = { [weak self] in
+                print("I am inside the clousure")
+                self?.item?.remindMe = cell.switch.isOn
+                tableView.reloadData()
+                
+            }
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DateCell", for: indexPath) as! DateTableViewCell
