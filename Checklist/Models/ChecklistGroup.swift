@@ -13,4 +13,31 @@ struct ChecklistGroup {
     let imageName: String
     var items: [ChecklistItem]
     
+    func getRemainings() -> String {
+        // All Done
+        var isAllDone = true
+        for item in items {
+            if item.isChecked == true {
+                isAllDone = false
+            }
+            if isAllDone {
+                return "All Done"
+            }
+        }
+        // No items
+        
+        if items.count == 0 {
+        }
+        if items.isEmpty {
+            return "no items"
+        }else{
+            return "\(items.count) Remaining"
+        }
+        if isAllDone {
+            return "All Done"
+        }else {
+            return "incorrect data"
+        }
+    }
+    
 }

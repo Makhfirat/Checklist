@@ -43,6 +43,7 @@ class MainViewController: UITableViewController  {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
         cell.iconView.image = UIImage(named: group.imageName)
         cell.titleLabel.text = group.title
+        cell.subtitleLabel.text = group.getRemainings()
         return cell 
     }
     
