@@ -8,18 +8,17 @@
 import UIKit
 //  TODO:
 // 1 Отобразить: Создать массив с нашими данными
-// 2 
 
 
 
 class GroupDetailsTableViewController: UITableViewController {
     
-    var items: [ChecklistItem] = []
-    
+    var group: ChecklistGroup!
+    var delegate: GroupDetailsProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var item: ChecklistItem?
+        
         
         
     }
@@ -33,12 +32,12 @@ class GroupDetailsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return items.count
+        return group.items.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = items[indexPath.row]
+        let item = group.items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath) as! ItemsTableViewCell
         cell.noteLabel.text = item.name
         cell.check.isHidden = item.isChecked
@@ -52,8 +51,22 @@ class GroupDetailsTableViewController: UITableViewController {
            let vc = segue.destination as? AddItemTableViewController,
            let indexPath = tableView.indexPathForSelectedRow {
             vc.title = "Edit Item"
-            vc.item = items[indexPath.row]
+            vc.item = group.items[indexPath.row]
+            //items[indexPath.row].name
+            
         }
         
+    }
+    //MARK: - processing of delegation of table or UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("tap on cage \(indexPath.row)")
+    }
+    
+    override func tableView(_ tableView : UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // delete the info from array
+        group.items.remove(at: indexPath.row)
+        // delete the cell from table
+        tableView.deleteRows(at: [indexPath], with: .automatic )
     }
 }

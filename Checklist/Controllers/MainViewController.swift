@@ -7,8 +7,17 @@
 
 import UIKit
 
-class MainViewController: UITableViewController  {
-    
+
+class MainViewController: UITableViewController, GroupDetailsProtocol {
+    ///MARK:- мои данные
+    func didDeleteItem(at index: Int, with groupTitle: String) {
+            for (groupIndex, group)  in groups.enumerated() {
+                if group.title == groupTitle{
+                    groups[groupIndex].items.remove(at: index)
+                    tableView.reloadData()
+                }
+            }
+        }
     
     var groups: [ChecklistGroup] = [
         ChecklistGroup(title: "Birthdays", imageName: "Birthdays", items: [
@@ -25,16 +34,25 @@ class MainViewController: UITableViewController  {
         ])
     ]
     
-    
+    //// MARK:- жизненный цикл  VIew Controller
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+ /// Подписываемся на нотификацию о создании заметки
+        NotificationCenter.default.addObserver(self, selector: #selector(handleAddNoteNotification), name: .noteHasBeenCreated, object: nil)
     }
     
+    
+    @objc func handleAddNoteNotification(_ notification: Notification) {
+        if let object = notification.object as? (ChecklistItem, String){
+        print("обрабатываю добавление новой заметки")
+            print("Получил значение: \(object.0)")
+        }
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.count
     }
+    //// Mark:  источник данных для таблицы
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let group = groups[indexPath.row]
@@ -46,18 +64,34 @@ class MainViewController: UITableViewController  {
         cell.subtitleLabel.text = group.getRemainings()
         return cell 
     }
+
+   /// MARK:- Обработка segue (переходы)
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MainToGroupDetails" {
             if let vc = segue.destination as? GroupDetailsTableViewController  {
                 if let indexPath = tableView.indexPathForSelectedRow {
-                    vc.title = groups[indexPath.row].title
-                    vc.items = groups[indexPath.row].items
-                    
+                  ///  vc.title = groups[indexPath.row].title
+                    ///vc.items = groups[indexPath.row].items
+                    vc.group = groups[indexPath.row]
+                    vc.delegate = self
                     
                 }
             }
         }
     }
-
+/// Обработка делегата таблицы
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("pushed on the cell \(indexPath.row)")
+//   }
+//  override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//      ///     удаление данных из массива
+//       groups.remove(at: indexPath.row)
+//
+//        // удалить  ячейку из самой таблицы
+//       tableView.deleteRows(at:[indexPath], with:.automatic)
+//
+//
+//  }
 }

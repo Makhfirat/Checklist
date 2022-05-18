@@ -22,4 +22,7 @@ class TextFieldTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func textFieldDidChange(_ sender: UITextField) {
+        print(sender.text)
+    }
 }

@@ -21,6 +21,8 @@
 		FA3DCA6A2816BE8400E21405 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DCA692816BE8400E21405 /* SwitchTableViewCell.swift */; };
 		FA3DCA6D2816BE9400E21405 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DCA6C2816BE9400E21405 /* DateTableViewCell.swift */; };
 		FA3DCA712816C28800E21405 /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3DCA702816C28800E21405 /* AddItemTableViewController.swift */; };
+		FA9CE3ED282E8FF40015894C /* GroupDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9CE3EC282E8FF40015894C /* GroupDetailsProtocol.swift */; };
+		FAD184F828327C3000ECC282 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD184F728327C3000ECC282 /* Notifications.swift */; };
 		FAD878E1281041DA00030B7F /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD878E0281041DA00030B7F /* GroupTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		FA3DCA692816BE8400E21405 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		FA3DCA6C2816BE9400E21405 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		FA3DCA702816C28800E21405 /* AddItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
+		FA9CE3EC282E8FF40015894C /* GroupDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsProtocol.swift; sourceTree = "<group>"; };
+		FAD184F728327C3000ECC282 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		FAD878E0281041DA00030B7F /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +87,8 @@
 		FA299B7928099D3900F6330C /* Checklist */ = {
 			isa = PBXGroup;
 			children = (
+				FAD184F628327BFE00ECC282 /* extension */,
+				FA9CE3EA282E8FAA0015894C /* protocols */,
 				FA308B842812CA9A00A3EBF0 /* Controllers */,
 				FAD878DF2810401500030B7F /* cell */,
 				FA25AFB8280D925500093BBB /* Models */,
@@ -104,6 +110,22 @@
 				FA3DCA702816C28800E21405 /* AddItemTableViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA9CE3EA282E8FAA0015894C /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FA9CE3EC282E8FF40015894C /* GroupDetailsProtocol.swift */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		FAD184F628327BFE00ECC282 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				FAD184F728327C3000ECC282 /* Notifications.swift */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 		FAD878DF2810401500030B7F /* cell */ = {
@@ -193,8 +215,10 @@
 				FA299B7F28099D3900F6330C /* MainViewController.swift in Sources */,
 				FA308B8E2812CE0900A3EBF0 /* ChecklistItem.swift in Sources */,
 				FA308B8B2812CC9200A3EBF0 /* GroupDetailsTableViewController.swift in Sources */,
+				FA9CE3ED282E8FF40015894C /* GroupDetailsProtocol.swift in Sources */,
 				FA299B7B28099D3900F6330C /* AppDelegate.swift in Sources */,
 				FA3DCA672816BE7100E21405 /* TextFieldTableViewCell.swift in Sources */,
+				FAD184F828327C3000ECC282 /* Notifications.swift in Sources */,
 				FA3DCA6A2816BE8400E21405 /* SwitchTableViewCell.swift in Sources */,
 				FA3DCA712816C28800E21405 /* AddItemTableViewController.swift in Sources */,
 				FA25AFBA280D92F400093BBB /* ChecklistGroup.swift in Sources */,
